@@ -20,6 +20,12 @@ namespace TestApi.Controllers
             int counter = 0;
             int loop = 0;
 
+            for (counter = 0; counter < lint.Count; counter++)
+            {
+                System.Console.WriteLine(LogObject(lint[counter]));
+            }
+            return Accepted(lint);
+
             lint.Sort();
 
             foreach (int i in lint)
@@ -46,6 +52,11 @@ namespace TestApi.Controllers
             }
 
             return slist;
+        }
+        double LogObject(double input)
+        {
+            System.Diagnostics.Debug.WriteLine(input);
+            return input;
         }
     }
 }
